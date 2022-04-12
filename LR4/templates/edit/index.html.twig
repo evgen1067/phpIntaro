@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Книги&Онлайн
+{% endblock %}
+
+{% block header %}
+    {% include 'base/header.html.twig' with {'u' : user} %}
+{% endblock %}
+
+{% block body %}
+    <main class="container d-flex flex-column align-content-center reg-container">
+        <h3 class="text-center">Редактировать</h3>
+        <form id="editForm">
+            <div class="mb-3 d-flex flex-column align-items-center">
+                <label class="form-label">
+                    Старый постер книги
+                </label>
+                <img width="200" height="250" class="mb-3" src="../{{ book.getCover() }}">
+                <button type="button" class="btn btn-danger" id="deletePoster">Удалить постер</button>
+            </div>
+            <div class="mb-3 d-flex flex-column align-items-center">
+                <a href="../{{ book.getFile() }}" class="link-icon mb-3" data-toggle="tooltip" title="Открыть книгу">
+                    Старый файл книги
+                </a>
+                <button type="button" class="btn btn-danger" id="deleteFile">Удалить файл книги</button>
+            </div>
+            <div class="mb-3">
+                <label for="inputEditName" class="form-label">
+                    Название книги
+                </label>
+                <input type="text" class="form-control" id="inputEditName" aria-describedby="editNameHelp" value="{{ book.getName() }}">
+                <div id="editNameHelp" class="form-text">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="inputEditAuthor" class="form-label">
+                    Автор книги
+                </label>
+                <input type="text" class="form-control" id="inputEditAuthor" aria-describedby="editAuthorHelp" value="{{ book.getAuthor() }}">
+                <div id="editAuthorHelp" class="form-text">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="inputEditDate" class="form-label">
+                    Дата прочтения
+                </label>
+                <input type="datetime-local" class="form-control" id="inputEditDate" aria-describedby="editDateHelp" value="{{ book.getDateRead()|date('Y-m-d H:m') }}">
+                <div id="editDateHelp" class="form-text">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="formFileEdit" class="form-label">Загрузите новый файл книги (необязательно)</label>
+                <input class="form-control" type="file" id="formFileEdit">
+            </div>
+            <div class="mb-3">
+                <label for="formImageEdit" class="form-label">Загрузите новый файл постера (необязательно)</label>
+                <input accept="image/png, image/jpeg, image/jpg" class="form-control" type="file" id="formImageEdit">
+            </div>
+            <div class="mb-3 text-center">
+                <input id="editButton" type="submit" data-id="{{ book.getId() }}" class="btn btn-primary mt-3" value="Редактировать">
+            </div>
+        </form>
+    </main>
+{% endblock %}
+
+{% block footer %}
+    {% include 'base/footer.html.twig' %}
+{% endblock %}

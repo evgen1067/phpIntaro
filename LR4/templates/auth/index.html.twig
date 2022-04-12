@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Книги&Онлайн
+{% endblock %}
+
+{% block header %}
+    {% include 'base/header.html.twig' with {'u' : user} %}
+{% endblock %}
+
+{% block body %}
+    <main class="form-signin">
+        <form id="authForm">
+            <h1 class="h3 mb-3 fw-normal">Авторизация</h1>
+
+            <div class="form-floating">
+                <input type="email" class="form-control" id="authEmail" placeholder="name@example.com">
+                <label for="authEmail">Email</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="authPass" placeholder="Password">
+                <label for="authPass">Пароль</label>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+            <p class="mt-5 mb-3 text-muted text-center">© 2022</p>
+        </form>
+    </main>
+{% endblock %}
+
+{% block footer %}
+    {% include 'base/footer.html.twig' %}
+{% endblock %}
+

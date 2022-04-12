@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Книги&Онлайн
+{% endblock %}
+
+{% block header %}
+    {% include 'base/header.html.twig' with {'u' : user} %}
+{% endblock %}
+
+{% block body %}
+    <main class="container d-flex flex-column align-content-center reg-container">
+        <h3 class="text-center">Добавить</h3>
+        <form id="addForm">
+            <div class="mb-3">
+                <label for="inputBookName" class="form-label">
+                    Название книги
+                </label>
+                <input type="text" class="form-control" id="inputBookName" aria-describedby="bookNameHelp">
+                <div id="bookNameHelp" class="form-text">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="inputBookAuthor" class="form-label">
+                    Автор книги
+                </label>
+                <input type="text" class="form-control" id="inputBookAuthor" aria-describedby="bookAuthorHelp">
+                <div id="bookAuthorHelp" class="form-text">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="inputBookDate" class="form-label">
+                    Дата прочтения
+                </label>
+                <input type="datetime-local" class="form-control" id="inputBookDate" aria-describedby="bookDateHelp">
+                <div id="bookDateHelp" class="form-text">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Загрузите файл книги (необязательно)</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
+            <div class="mb-3">
+                <label for="formImage" class="form-label">Загрузите файл постера (необязательно)</label>
+                <input accept="image/png, image/jpeg, image/jpg" class="form-control" type="file" id="formImage">
+            </div>
+            <div class="mb-3 text-center">
+                <input type="submit" class="btn btn-primary mt-3" value="Добавить">
+            </div>
+        </form>
+    </main>
+{% endblock %}
+
+{% block footer %}
+    {% include 'base/footer.html.twig' %}
+{% endblock %}

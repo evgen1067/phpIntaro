@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"
+          href="css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="css/main.css">
+    <title>Document</title>
+</head>
+<body>
+
+<main>
+    <div class="container d-flex justify-content-center align-content-center align-items-center flex-column">
+        <div class="row">
+            <form id="addressForm">
+                <div class="mb-3">
+                    <label for="addressInput" class="form-label" id="addressLabel">Укажите адрес</label>
+                    <input type="text" class="form-control" id="addressInput" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <input type="submit" class="btn btn-primary" value="Поиск ближайшего метро">
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <strong>
+                <div class="col-12 d-flex align-items-center justify-content-center align-content-center flex-column">
+                    <label id="fullAddress"></label>
+                    <label id="coordinates"></label>
+                    <label id="metro"></label>
+                </div>
+            </strong>
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript"
+        src="js/JQuery.js"></script>
+<script type="text/javascript"
+        src="js/bootstrap.bundle.js"></script>
+<script type="text/javascript"
+        src="js/main.js"></script>
+</body>
+</html>
